@@ -8,13 +8,13 @@ router.post('/', async (req, res) => {
     let difficulty = req.body.difficulty === 'random' ? '' : `&difficulty=${req.body.difficulty}`
     let API_URL = 'https://the-trivia-api.com/api/questions?' + limit + category + difficulty
 
-    const apiData = await axios.get(API_URL)
-        .catch((error) => {
-            // ***PlaceHolder***
-            console.log(error)
+    // Research on how to handle asynchronous axios calls
+    const apiResponse = await axios.get(API_URL)
+        .catch(error => {
+            console.log(error) // *** PlaceHolder ***
         })
 
-    res.json(API_URL)
+    res.json(apiResponse.data)
 })
 
 module.exports = router
