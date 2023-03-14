@@ -19,6 +19,7 @@ app.get('/', async (req, res) => {
 // Controllers
 app.use('/trivia', require('./controllers/trivia'))
 app.use('/users', require('./controllers/users'))
+app.use('/highscores', require('./controllers/highscores'))
 
 // Listen for Connections
 app.listen(process.env.PORT, () => {

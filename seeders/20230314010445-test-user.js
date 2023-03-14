@@ -11,6 +11,7 @@ module.exports = {
         first_name: 'Nova',
         last_name: 'Tester',
         email: 'nova@tester.com',
+        role: 'admin',
         created_at: new Date(),
         updated_at: new Date()
       }
