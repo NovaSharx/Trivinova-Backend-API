@@ -2,27 +2,27 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Users', {
-      userId: {
+    await queryInterface.createTable('users', {
+      user_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userName: {
+      user_name: {
         allowNull: false,
         unique: true,
         type: Sequelize.STRING
       },
-      passwordDigest: {
+      password_digest: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      firstName: {
+      first_name: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      lastName: {
+      last_name: {
         allowNull: false,
         type: Sequelize.STRING
       },
@@ -37,17 +37,17 @@ module.exports = {
         defaultValue: 'player',
         type: Sequelize.ENUM
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('users');
   }
 };
